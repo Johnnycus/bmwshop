@@ -12,3 +12,25 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body { padding-top: 70px; }
+
+#logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  float: left;
+  padding-top: 9px;
+}
+
+.nav-tabs li:nth-child(-n+3), .dropdown {
+  margin-top: 80px;
+}
+
+.cart-btn {
+  margin-top: 45px;
+}
+
+.dropdown .dropdown-menu li {
+  margin: 0;
+}
