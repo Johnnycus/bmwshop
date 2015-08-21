@@ -25,8 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
-# for static pages
+# static pages
 gem 'high_voltage', '~> 2.4.0'
+# images
+gem "paperclip", '~> 4.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
