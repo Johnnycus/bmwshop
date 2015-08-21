@@ -16,10 +16,19 @@
     </div>
   </div>
   <br>
-  <div class="form-group text-center">
-    <label for="feedback"><strong>Leave a Feedback:</strong></label>
-    <textarea class="form-control center" rows="10" id="feedback"></textarea>
+  <div class="container">
+    <h2>What people say about us</h2>
     <br>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <% @comments.each do |comment| %>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 well">
+          <p><%= comment.text %></p>
+          <div class="pull-right">
+            <span class="quiet"><small>on <%= comment.created_at.strftime("%b %d, %Y") %></small></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= render "shared/comments_form" %>
   </div>
 </div>

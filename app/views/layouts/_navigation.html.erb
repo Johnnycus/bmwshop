@@ -1,13 +1,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <%= link_to(image_tag("BMW_logo.png", alt: "BMW logo", width: 90, height: 90, title: "Home Page"), root_path, id: "logo") %>
-    </h1>
     <div class="collapse navbar-collapse extraClass" id="bs-example-navbar-collapse-1">
       <ul class="nav nav-tabs">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Products", root_path %></li>
         <li><%= link_to "About", static_path(:about) %></li>
-        <li><%= link_to "Contact Us", static_path(:contact) %></li>
+        <li><%= link_to "Contact Us", contact_path %></li>
         <div class="pull-right">
           <div class="nav_item">
             <%= link_to "Log In", root_path, class: "btn btn-default btn-default" %>
