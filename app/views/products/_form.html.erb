@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+  <h1>Add new car</h1>
+    <div class="row">
+      <%= form_for @product, html: { multipart: true } do |f| %>
+        <div class="form-group">
+        <div class="col-md-8 col-md-offset-2">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control min-input" %><br>
+
+          <%= f.label :price %>
+          <%= f.text_field :price, class: "form-control min-input" %><br>
+
+          <%= f.label :overview %>
+          <%= f.text_area :overview, rows: 5, class: "form-control" %><br>
+
+          <%= f.label :description %>
+          <%= f.text_area :description, rows: 10, class: "form-control" %><br>
+
+          <%= f.file_field :photo %><br>
+
+          <%= f.submit("Submit", class: "btn btn-primary") %>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

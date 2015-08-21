@@ -11,3 +11,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore local asset pipeline cache files
+/public/assets
+/public/system
