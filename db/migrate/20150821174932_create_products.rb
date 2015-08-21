@@ -5,7 +5,6 @@ class CreateProducts < ActiveRecord::Migration
       t.float :price
       t.text :overview
       t.text :description
-      t.string :picture
 
       t.timestamps
     end
