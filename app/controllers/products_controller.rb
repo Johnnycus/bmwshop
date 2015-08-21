@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :show]
 
   def index
-    @products = Product.all
+    @products = Product.order('created_at DESC')
   end
 
   def show
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   private
 
     def product_params
-      params.require(:product).permit(:name, :overview, :description, :photo)
+      params.require(:product).permit(:name, :overview, :price, :description, :photo)
     end
 
     def set_product
