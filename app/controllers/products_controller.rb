@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:edit, :update, :show]
+  before_action :set_product, only: [:edit, :update, :show, :destroy]
 
   def index
     @products = Product.order('created_at DESC')
@@ -23,7 +23,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -32,6 +31,11 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to products_path
   end
 
   private
