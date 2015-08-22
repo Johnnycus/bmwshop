@@ -1,15 +1,19 @@
 <div class="jumbotron">
   <div class="container">
-  <h1>List of cars</h1><br>
+    <h1>List of cars</h1><br>
     <div class="row">
       <% @products.each do |product| %>
         <div class="col-md-4">
           <div class="thumbnail">
-            <%= image_tag product.photo.url %>
+            <%= link_to product do %>
+              <%= image_tag product.photo.url %>
+            <% end %>
             <div class="caption">
-              <h4><%= link_to product.name, product_path(product) %></h4>
+              <h3><strong><%= product.name %></strong></h3>
               <p><strong>Price:</strong> $<%= product.price %></p>
               <p><strong>Overview:</strong> <%= product.overview %></p>
+              <%= link_to "Overview", product, class: 'btn btn-lg btn-primary' %>
+              <%= link_to "Add to Cart", root_path, class: 'btn btn-lg btn-primary pull-right' %>
             </div>
           </div>
         </div>
