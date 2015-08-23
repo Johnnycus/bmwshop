@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      flash[:success] = "Your feedback was added successfully!"
+      flash[:success] = "Feedback was successfully created"
       redirect_to contact_path
     else
       redirect_to contact_path

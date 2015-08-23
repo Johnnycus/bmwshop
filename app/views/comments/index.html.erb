@@ -1,3 +1,4 @@
+<% title "Feedback" %>
 <div class="jumbotron">
   <div class="container contact">
     <div class="pull-left">
@@ -17,6 +18,7 @@
   </div>
   <br>
   <div class="container">
+    <%= render 'shared/errors', obj: @comment %>
     <h2>What people say about us</h2>
     <br>
     <% @comments.each do |comment| %>

@@ -1,6 +1,7 @@
 <div class="jumbotron">
   <div class="container">
-  <h1>Add new car</h1>
+  <h1>Car</h1>
+  <%= render 'shared/errors', obj: @product %>
     <div class="row">
       <%= form_for @product, html: { multipart: true } do |f| %>
         <div class="form-group">
@@ -9,7 +10,7 @@
           <%= f.text_field :name, class: "form-control min-input" %><br>
 
           <%= f.label :price %>
-          <%= f.text_field :price, class: "form-control min-input" %><br>
+          <%= f.number_field :price, class: "form-control min-input" %><br>
 
           <%= f.label :overview %>
           <%= f.text_area :overview, rows: 5, class: "form-control" %><br>
