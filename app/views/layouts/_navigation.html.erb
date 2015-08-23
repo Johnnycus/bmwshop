@@ -3,7 +3,8 @@
     <%= link_to(image_tag("BMW_logo.png", alt: "BMW logo", width: 80, height: 80, title: "Home Page"), root_path, id: "logo") %>
     <div class="collapse navbar-collapse extraClass" id="bs-example-navbar-collapse-1">
       <ul class="nav nav-tabs">
-        <li class="<%= 'active' if params[:controller] == 'products' %>"><%= link_to "Products", root_path %></li>
+        <li class="<%= active_class(root_path) %>"><%= link_to "Home", root_path %></li>
+        <li class="<%= 'active' if params[:controller] == 'products' %>"><%= link_to "Products", products_path %></li>
         <li class="<%= active_class(static_path(:about)) %>"><%= link_to "About", static_path(:about) %></li>
         <li class="<%= active_class(contact_path) %>"><%= link_to "Contact Us", contact_path %></li>
         <div class="pull-right">

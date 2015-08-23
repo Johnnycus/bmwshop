@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
   resources :products
-  root 'products#index'
-  get '/home' => 'products#index'
+  root 'pages#index'
   get '/contact' => 'comments#index'
 
   resources :comments, only: [:create]
