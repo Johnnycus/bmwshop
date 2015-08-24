@@ -19,7 +19,7 @@
 
         <li class="nav-flash" style="<%= "display: none" unless flash %>">
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-md-offset-2">
               <% flash.each do |message_type, message| %>
                 <div class="alert alert-<%= message_type %>"><%= message %>
                 </div>
