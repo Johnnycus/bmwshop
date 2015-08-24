@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:create]
 
+  resources :users, only: [:show]
+
   get '/:id' => 'high_voltage/pages#show', as: :static
 
 end
