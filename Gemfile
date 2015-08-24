@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby "2.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
@@ -31,6 +31,8 @@ gem 'high_voltage', '~> 2.4.0'
 gem 'paperclip', '~> 4.3'
 # Authentication
 gem 'devise'
+# for heroku
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
