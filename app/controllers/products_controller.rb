@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :show, :destroy]
+  before_action :authenticate_admin!, except: [:index, :show]
 
   def index
     @products = Product.order('created_at DESC')

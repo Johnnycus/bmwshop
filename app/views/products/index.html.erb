@@ -2,8 +2,10 @@
 <div class="jumbotron">
   <div class="container">
     <h1>List of cars</h1><br>
-    <%= link_to new_product_path, class: 'btn btn-default btn-md' do %>
-      Add product
+    <% if signed_in?(:admin) %>
+      <%= link_to new_product_path, class: 'btn btn-default btn-md' do %>
+       Add product
+      <% end %>
     <% end %>
     <div class="row"><br>
       <% @products.each do |product| %>
