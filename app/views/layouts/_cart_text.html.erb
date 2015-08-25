@@ -1,0 +1,6 @@
+<div class="pull-right cart-btn">
+  <%= link_to cart_path, class: 'btn btn-primary btn-md' do %>
+    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+    Cart: <span class="badge"><%= current_order.order_items.size %></span>
+  <% end %>
+</div>

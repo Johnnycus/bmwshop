@@ -40,11 +40,8 @@
               <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default btn-default" %>
             <% end %>
           </div>
-          <div class="pull-right cart-btn">
-            <%= link_to root_path, class: 'btn btn-primary btn-md' do %>
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-              Cart: <span class="badge">0</span>
-            <% end %>
+          <div class="cart-text">
+            <%= render "layouts/cart_text" %>
           </div>
         </div>
       </ul>
