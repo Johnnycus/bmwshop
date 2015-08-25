@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+
   root 'pages#index'
 
   resources :products
@@ -11,9 +14,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   get '/contact' => 'comments#index'
-
-  devise_for :admins
-  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
 
   get '/:id' => 'high_voltage/pages#show', as: :static
 
