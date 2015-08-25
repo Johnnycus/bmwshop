@@ -7,7 +7,7 @@
       <h3><strong><%= product.name %></strong></h3>
       <p><strong>Overview:</strong> <%= product.overview %></p>
       <%= form_for order_item, remote: true do |f| %>
-        <h3>Price:<%= number_to_currency(product.price, precision: (product.price.round == product.price) ? 0 : 2) %></h3>
+        <h3>Price: <%= number_to_currency(product.price, precision: (product.price.round == product.price) ? 0 : 2) %></h3>
         <div class="input-group">
           <%= f.number_field :quantity, value: 1, class: 'form-control input-lg', min: 1 %>
           <div class="input-group-btn">
