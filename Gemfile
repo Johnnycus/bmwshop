@@ -29,8 +29,12 @@ gem 'high_voltage', '~> 2.4.0'
 gem 'paperclip', '~> 4.3'
 # Authentication
 gem 'devise'
-# for heroku
+# Heroku
 gem 'rails_12factor', group: :production
+# Braintree
+gem 'braintree', '~> 2.33.1'
+gem 'figaro', '~> 0.7.0'
+gem 'gon', '~> 5.1.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

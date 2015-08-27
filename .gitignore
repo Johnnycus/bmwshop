@@ -15,3 +15,6 @@
 # Ignore local asset pipeline cache files
 /public/assets
 /public/system
+
+# Ignore application configuration
+/config/application.yml

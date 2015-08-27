@@ -1,0 +1,13 @@
+<% title "New Transaction" %><br><br><br><br><br><br><br><br><br><br>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 well">
+      <h1>New Transaction</h2>
+      <%= form_tag transactions_path do %>
+        <p>Please enter your payment details:</p>
+        <div id="dropin"></div>
+        <%= submit_tag "Pay #{number_to_currency(current_order.subtotal, precision: current_order.subtotal.round == current_order.subtotal ? 0 : 2)}", class: "btn btn-default text-center" %>
+        <% end %>
+    </div>
+  </div>
+</div>

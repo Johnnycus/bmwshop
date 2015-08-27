@@ -5,9 +5,10 @@
     <%= render "shopping_cart" %>
   </div><hr>
   <div class="pull-right">
-    <h3 class="total-text">Total: <%= number_to_currency(current_order.subtotal, precision: current_order.subtotal.round == current_order.subtotal ? 0 : 2) %></h3><hr>
+    <h3>Total: <%= number_to_currency(current_order.subtotal, precision: current_order.subtotal.round == current_order.subtotal ? 0 : 2) %></h3><hr>
     <% unless @order_items.size == 0 %>
-      <%= link_to "Empty Cart", @cart, class: "btn btn-lg btn-warning pull-right", method: :delete, data: { confirm: 'Are you sure you want to clear your cart?' } %><br>
+      <%= link_to "Checkout", new_transaction_path, class: "btn btn-lg btn-warning" %>
+      <%= link_to "Empty Cart", @cart, class: "btn btn-lg btn-warning", method: :delete, data: { confirm: 'Are you sure you want to clear your cart?' } %><br>
     <% end %>
   </div>
 </div><br><br>

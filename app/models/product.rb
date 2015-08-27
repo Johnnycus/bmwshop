@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :order_items
+  has_many :purchases
+  has_many :buyers, through: :purchases
 
   validates :name, presence: true
   validates :price, presence: true
