@@ -30,7 +30,7 @@ class TransactionsController < ApplicationController
       @cart = current_order.order_items
       @cart.destroy
       session[:order_id] = nil
-      redirect_to transaction_path, notice: "Congraulations! Your transaction has been successfully!"
+      redirect_to products_path, notice: "Your transaction has been successfully!"
     else
       flash[:alert] = "Something went wrong. Please try again!"
       gon.client_token = generate_client_token
