@@ -9,12 +9,28 @@ class TransactionsController < ApplicationController
   def create
     @result = Braintree::Transaction.sale(
               amount: current_order.subtotal,
-              payment_method_nonce: params[:payment_method_nonce])
+              payment_method_nonce: params[:payment_method_nonce],
+              customer: {
+                first_name: params[:first_name],
+                last_name: params[:last_name],
+                email: current_user.email,
+                phone: params[:phone]
+              },
+              shipping: {
+                country_name: params[:country_name],
+                street_address: params[:street_address],
+                locality: params[:locality],
+                region: params[:region]
+              },
+              options: {
+                store_in_vault: true
+              })
+
     if @result.success?
       @cart = current_order.order_items
       @cart.destroy
       session[:order_id] = nil
-      redirect_to products_path, notice: "Congraulations! Your transaction has been successfully!"
+      redirect_to transaction_path, notice: "Congraulations! Your transaction has been successfully!"
     else
       flash[:alert] = "Something went wrong. Please try again!"
       gon.client_token = generate_client_token

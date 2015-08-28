@@ -16,4 +16,4 @@
 //= require jquery
 //= require bootstrap-sprockets
 $(".alert").alert();
-window.setTimeout(function() { $(".alert").fadeOut("slow"); }, 2000);
+window.setTimeout(function() { $(".alert").fadeOut("slow"); }, 5000);
